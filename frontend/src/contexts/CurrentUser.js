@@ -6,6 +6,7 @@ export const CurrentUser = createContext()
 function CurrentUserProvider({ children }) {
 
     const [currentUser, setCurrentUser] = useState(null)
+    //localStorage.setItem('token','')
     useEffect(() => {
 
         const getLoggedInUser = async () => {
@@ -15,6 +16,7 @@ function CurrentUserProvider({ children }) {
                 }
             })
             let user = await response.json()
+            console.log(user)
             setCurrentUser(user)
         }
         getLoggedInUser()

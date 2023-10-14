@@ -27,6 +27,9 @@ function Navigation() {
         loginActions = (
             <li style={{ float: 'right' }}>
                 Logged in as {currentUser.firstName} {currentUser.lastName}
+                <a href="#" onClick={() => {localStorage.removeItem('token'); window.location.reload()}}>
+                     Logout
+                </a>
             </li>
         )
     }
